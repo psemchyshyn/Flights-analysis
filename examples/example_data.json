@@ -1,0 +1,33 @@
+{
+    "success": true,
+    "data": {
+        "HKT": {
+            "1": {
+                "price": 43822,
+                "airline": "SU",
+                "flight_number": 272,
+                "departure_at": "2020-04-11T21:15:00Z",
+                "return_at": "2020-04-25T14:40:00Z",
+                "expires_at": "2020-03-31T11:12:58Z"
+            },
+            "2": {
+                "price": 46768,
+                "airline": "QR",
+                "flight_number": 234,
+                "departure_at": "2020-04-11T13:15:00Z",
+                "return_at": "2020-04-19T20:40:00Z",
+                "expires_at": "2020-03-30T09:53:17Z"
+            },
+            "3": {
+                "price": 71477,
+                "airline": "QR",
+                "flight_number": 234,
+                "departure_at": "2020-04-11T13:15:00Z",
+                "return_at": "2020-04-25T11:25:00Z",
+                "expires_at": "2020-03-30T15:52:34Z"
+            }
+        }
+    },
+    "error": null,
+    "currency": "rub"
+}
