@@ -1,0 +1,32 @@
+.navbar-dark, .menu-content{
+    background-color: #1d8fa8;
+}
+
+.home-img {
+    display: block;
+    position: relative;
+  }
+  
+.home-img::after{
+    content: "";
+    background-image: url(../images/flight_home.jpg);
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+.row-header{
+      margin-bottom: 25px;
+      padding-top: 25px;
+  }
+
+.btn-about{
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
