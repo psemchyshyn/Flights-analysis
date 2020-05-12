@@ -5,8 +5,7 @@ import dash_table
 import pandas as pd
 from dash.exceptions import PreventUpdate
 from datetime import datetime
-from data_dashapps.geo import create_geo_objects, create_default_map_1
-from data_dashapps.retrieve_data import FlightsFounder
+from data_dashapps.manager import ManagerFlight
 from data_dashapps.cities_processing import df
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -19,7 +18,7 @@ FILTERING_NAV = {
         1: ["return date", "return_date"],
         2: ["period of ticket's availability", "found_at"]
     }
-
+MANAGER = ManagerFlight()
 options = [{"label": place, "value": iata} for place, iata in zip(df["name"], df["code"])]
 cols = ["value", "return_date", "origin", "gate", "found_at", "duration", "distance", "destination", "depart_date"]
 
@@ -87,21 +86,12 @@ app1.layout = html.Div(children=[
      dash.dependencies.Input("input_destination", "value")]
 )
 def slider_update_max_min(origin, destination):
-    processor = FlightsFounder(origin, destination)
-    try:
-        tickets = processor.get_latest_tickets()["data"]
-        df_for_price = pd.DataFrame(tickets).drop(["show_to_affiliates", "trip_class",
-                                                   "actual", "number_of_changes"], axis=1)
-        table_content = df_for_price.to_dict("records")
-        max_bound = df_for_price["value"].max()
-        min_bound = df_for_price["value"].min()
-    except KeyError:
-        min_bound = 0
-        max_bound = 10000
-        table_content = []
+    MANAGER.update_data(origin, destination)
+    max_bound = MANAGER.get_highest_price()
+    min_bound = MANAGER.get_cheapest_price()
     marks = {min_bound: {"label": f"{min_bound} UAH", "style": {"color": "white"}},
              max_bound: {"label": f"{max_bound} UAH", "style": {"color": "white"}}}
-    return max_bound, min_bound, [min_bound, max_bound], marks, table_content
+    return max_bound, min_bound, [min_bound, max_bound], marks, MANAGER.get_data_table()
 
 
 @app1.callback(
@@ -122,52 +112,9 @@ def update_slider_values(value):
      dash.dependencies.Input("input_destination", "value")]
 )
 def create_graph(filter_val, checklist_filter, origin, destination):
-    processor = FlightsFounder(origin, destination)
-    try:
-        tickets = processor.get_latest_tickets()["data"]
-        graph_df = pd.DataFrame(tickets)
-        origin_place_coor = list(df.loc[df["code"] == origin].values[0][2].values())
-        destination_place_coor = list(df.loc[df["code"] == destination].values[0][2].values())
-
-    except (IndexError, KeyError):
-        origin, destination = "-", "-"
-        blank_graph = {
-            "data": [],
-            "layout": {
-                "title": "Analysis of flights from " + origin + " to " + destination,
-                "xaxis": {"title": "Date"},
-                "yaxis": {"title": "Price, UAH", "type": "log"}
-                }
-        }
-        return blank_graph, create_default_map_1()
-
-    origin = df.loc[df["code"] == origin].values[0][1]
-    destination = df.loc[df["code"] == destination].values[0][1]
-
-    if tickets == []:
-        return {
-            "data": [],
-            "layout": {
-                "title": "Analysis of flights from " + origin + " to " + destination,
-                "xaxis": {"title": "Date"},
-                "yaxis": {"title": "Price, UAH", "type": "log"}
-                }
-        }, create_geo_objects(origin_place_coor, destination_place_coor, origin, destination)
-
-    graph_df.query("value > @filter_val[0] and value < @filter_val[1]", inplace=True)
-    data_to_pass = [graph_df.sort_values(by=filt) for filt in checklist_filter]
-    return {
-        "data": [
-            {"x": option[filt], "y": option["value"], "name": filt, "type": "line", "text": option[filt]}
-            for option, filt in zip(data_to_pass, checklist_filter)
-        ],
-        "layout": {
-            "title": "Analysis of flights from " + origin + " to " + destination,
-            "xaxis": {"title": "Date"},
-            "yaxis": {"title": "Price, UAH", "type": "log"}
-        }
-    }, create_geo_objects(origin_place_coor, destination_place_coor, origin, destination)
-
+    MANAGER.update_data(origin, destination)
+    MANAGER.filter_price(filter_val[0], filter_val[1])
+    return MANAGER.create_layout_graph(checklist_filter), MANAGER.create_web_map_1()
 
 
 ############ Options of inputs ####################
