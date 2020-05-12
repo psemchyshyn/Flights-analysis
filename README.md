@@ -1,4 +1,4 @@
-# Flights Detector
+# Flights Detector // Hosted on heroku https://flightsdetector.herokuapp.com/home
 **What Flights Detector does?**
 
 Flight Detector is created for managing flights of different directions and finding the most beneficial in terms of money and time saving
