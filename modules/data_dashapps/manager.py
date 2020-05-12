@@ -1,7 +1,8 @@
 import pandas as pd
 from data_dashapps.retrieve_data import FlightsFounder
 from data_dashapps.cities_processing import df
-from data_dashapps.geo import create_default_map_1, create_geo_objects
+from data_dashapps.geo import create_default_map_1, create_geo_objects, create_default_map_2, create_alt_lines
+from geopy.distance import distance 
 
 class ManagerFlight:
     '''
@@ -20,20 +21,20 @@ class ManagerFlight:
         self.table_data = pd.DataFrame()
 
 
-    def _extract_data(self, processor):
+    def _extract_data(self, processor, departure=None):
         '''
         A method, which extracts data from processor
         request to api
         '''
         try:
-            data = processor.get_latest_tickets()["data"]
+            data = processor.get_latest_tickets(departure)["data"]
         except KeyError:
             data = []
         self.table_data = pd.DataFrame(data)
         if data:
-            self.table_data.drop(["show_to_affiliates", "trip_class","actual", "number_of_changes"], axis=1, inplace=True)
+            self.table_data.drop(["show_to_affiliates", "trip_class", "actual", "number_of_changes", "duration"], axis=1, inplace=True)
 
-    def update_data(self, origin, destination):
+    def update_data(self, origin=None, destination=None, departure=None):
         '''
         Updates data with new origin and destination
         places in iata code values
@@ -66,6 +67,14 @@ class ManagerFlight:
         else:
             return []
 
+    def _sort_one(self, filt):
+        '''
+        Helper method, sorts dataframe object
+        without returning anything
+        '''
+        if not self.table_data.empty:
+            self.table_data.sort_values(by=filt, inplace=True)
+
     def get_origin_coor(self):
         '''
         Returns an origin city coordiantes if
@@ -88,7 +97,7 @@ class ManagerFlight:
         by giving its iata code
         '''
         try:
-            coors = list(self.cities_table[self.cities_table["code"] == place_iata].values[0][2].values())
+            coors = list(self.cities_table[self.cities_table["code"] == place_iata].values[0][2].values())[:: -1]
         except (IndexError, KeyError):
             coors = None
         return coors
@@ -179,3 +188,75 @@ class ManagerFlight:
         as python dictionary
         '''
         return self.table_data.to_dict("records")
+
+    def get_distance_between_points(self):
+        '''
+        Gets distance in kilometer between origin and
+        destination
+        '''
+        origin_coor = self.get_origin_coor()
+        dest_coor = self.get_destination_coor()
+        if origin_coor and dest_coor:
+            return distance(origin_coor, dest_coor).km
+
+    def get_locations_between(self, max_distance):
+        if max_distance:
+            self.table_data.query("distance < @max_distance", inplace=True)
+
+    def process_distances_for_alt_flights(self):
+        base_distance = self.get_distance_between_points()
+        self.update_data(self.origin)
+        if base_distance and not self.table_data.empty:
+            self.get_locations_between(base_distance)
+            self._sort_one("destination")
+            temp = self.cities_table[self.cities_table["code"].isin(self.table_data["destination"])]
+            temp.sort_values(by="code", inplace=True)
+            coordinates = []
+            for _, row in temp.iterrows():
+                coor = row["coordinates"]
+                if isinstance(coor, dict):
+                    coor = list(coor.values())[:: -1]
+                    coordinates.append(coor)
+                else:
+                    coordinates.append(None)
+            self.table_data["coordinates"] = coordinates
+            self._sort_one("distance")
+
+    def create_web_map_2(self):
+        if "coordinates" in self.table_data:
+            result = create_alt_lines(self.get_origin_coor(), self.table_data)
+        else:
+            result = create_default_map_2()
+        return result
+
+    def create_bubble_layout(self):
+        if self.table_data.empty:
+            return {
+            "data": [],
+            "layout": {
+                "title": "Alternative flights analysis",
+                "xaxis": {"title": "Date"},
+                "yaxis": {"title": "Distance, km", "type": "log"}
+                }
+        }
+        else:
+            return {
+        "data": [
+            {"x": self.table_data["depart_date"], "y": self.table_data["distance"], "mode": 'markers',
+             "marker": {
+                'size': 15,
+                'opacity': 0.5,
+                'line': {'width': 0.5, 'color': 'white'},
+            },
+             'customdata': self.table_data["destination"]
+             }
+        ],
+        "layout": {
+            "title": "Alternative flights analysis",
+            "xaxis": {"title": "Date"},
+            "yaxis": {"title": "Distance, km", "type": "log"},
+            "hovermode": 'closest',
+            "clickmode": "event+select"
+        }
+    }
+            

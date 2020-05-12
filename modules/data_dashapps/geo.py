@@ -3,8 +3,8 @@ import plotly.graph_objects as go
 
 def create_geo_objects(coor1, coor2, origin, destination):
     fig = go.Figure(data=go.Scattergeo(
-        lat=[coor1[1], coor2[1]],
-        lon=[coor1[0], coor2[0]],
+        lat=[coor1[0], coor2[0]],
+        lon=[coor1[1], coor2[1]],
         mode='lines',
         line=dict(width=3, color='blue'),
     ))
