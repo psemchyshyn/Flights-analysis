@@ -1,10 +1,14 @@
+'''
+FligthsDetector
+Pavlo Semchyshyn
+'''
+
+from datetime import datetime
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
-import pandas as pd
 from dash.exceptions import PreventUpdate
-from datetime import datetime
 from data_dashapps.manager import ManagerFlight
 from data_dashapps.cities_processing import df
 

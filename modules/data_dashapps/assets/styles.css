@@ -1,5 +1,5 @@
 .search-box{
-    background-color: #178ecf;
+    background-color: #1d8fa8;
     box-sizing: border-box;
     padding: 30px;
     margin-top: 40px;
@@ -17,7 +17,7 @@ h4, h3, strong{
 }
 
 nav{
-    background-color: #178ecf;
+    background-color: #1d8fa8;
     display: flex;
     align-items: center;
 }
@@ -41,6 +41,6 @@ nav img{
 }
 
 #submit:hover {
-    background-color: #178ecf;
+    background-color: #1d8fa8;
     color: white;
 }

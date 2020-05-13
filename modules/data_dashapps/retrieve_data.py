@@ -1,5 +1,10 @@
-import requests
+'''
+FligthsDetector
+Pavlo Semchyshyn
+'''
+
 import json
+import requests
 
 
 BASEULR = "https://api.travelpayouts.com/v2/prices/"
@@ -39,7 +44,8 @@ class FlightsFounder:
         '''
         url = URLS["latest"]
         querystring = self.base_querystring.copy()
-        querystring.update({"beginning_of_period": beginning_of_period, "period_type": period_type, "limit": 300})
+        querystring.update({"beginning_of_period": beginning_of_period,
+                            "period_type": period_type, "limit": 300})
         return self.send_request(url, querystring)
 
     def get_calendar_prices_month(self, month=None) -> dict:
@@ -54,7 +60,7 @@ class FlightsFounder:
         querystring.update({"month": month})
         return self.send_request(url, querystring)
 
-    def get_alternative_directions(self, depart_date=None, return_date=None, flexibilty=0) -> dict:
+    def get_alternative_directions(self, depart_date=None, return_date=None) -> dict:
         """
         Method for retrieving  tickets for each day in the month
         by entering depart and return date.
@@ -64,7 +70,7 @@ class FlightsFounder:
         """
         url = URLS["nearest_places"]
         querystring = self.base_querystring.copy()
-        querystring.update({"depart_date": depart_date, "return_date": return_date, "flexibilty": flexibilty})
+        querystring.update({"depart_date": depart_date, "return_date": return_date})
         return self.send_request(url, querystring)
 
     def get_grouped_by_month_tickets(self, depart_date=None, return_date=None) -> dict:
@@ -86,8 +92,8 @@ class FlightsFounder:
         the entered url, writing result to json file and
         returning it as dict
         """
-        response = requests.request("GET", url, headers=FlightsFounder.headers, params=querystring).json()
+        response = requests.request("GET", url, headers=FlightsFounder.headers, params=querystring)
+        response = response.json()
         with open("data_dashapps/api_v_2.json", "w", encoding="utf-8") as file:
             json.dump(response, file, indent=4)
         return response
-
