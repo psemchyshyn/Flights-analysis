@@ -94,6 +94,6 @@ class FlightsFounder:
         """
         response = requests.request("GET", url, headers=FlightsFounder.headers, params=querystring)
         response = response.json()
-        with open("data_dashapps/api_v_2.json", "w", encoding="utf-8") as file:
+        with open("modules/data_dashapps/api_v_2.json", "w", encoding="utf-8") as file:
             json.dump(response, file, indent=4)
         return response

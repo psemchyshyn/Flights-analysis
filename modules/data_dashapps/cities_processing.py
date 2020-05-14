@@ -19,12 +19,12 @@ def get_cities_json():
 
     response = requests.request("GET", url, headers=headers)
     response = json.loads(response.text)
-    with open("data_dashapps/iata_cities.json", "w") as file:
+    with open("modules/data_dashapps/iata_cities.json", "w") as file:
         json.dump(response, file, indent=4)
     return pd.DataFrame(response)
 
 
-def read_cities(path="data_dashapps/iata_cities.json"):
+def read_cities(path="modules/data_dashapps/iata_cities.json"):
     '''
     Read cities from the json file
     and return data about them as pandas

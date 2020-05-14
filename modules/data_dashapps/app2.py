@@ -9,8 +9,8 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 from dash.exceptions import PreventUpdate
-from data_dashapps.cities_processing import df
-from data_dashapps.manager import ManagerFlight
+# from modules.data_dashapps.cities_processing import df
+from modules.data_dashapps.manager import ManagerFlight, df
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app2 = dash.Dash(__name__, external_stylesheets=external_stylesheets, requests_pathname_prefix="/app2/")

@@ -1,3 +1,8 @@
+'''
+FligthsDetector
+Pavlo Semchyshyn
+'''
+
 import unittest
 from modules.data_dashapps.manager import ManagerFlight
 

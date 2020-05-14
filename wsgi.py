@@ -7,9 +7,9 @@ from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from werkzeug.serving import run_simple
 
 
-from data_dashapps.app1 import app1
-from data_dashapps.app2 import app2
-from flask_app import flask_app
+from modules.data_dashapps.app1 import app1
+from modules.data_dashapps.app2 import app2
+from modules.flask_app import flask_app
 
 application = DispatcherMiddleware(flask_app, {
     '/app1': app1.server,

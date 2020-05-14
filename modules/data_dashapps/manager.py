@@ -6,9 +6,9 @@ Pavlo Semchyshyn
 
 import pandas as pd
 from geopy.distance import distance
-from data_dashapps.retrieve_data import FlightsFounder
-from data_dashapps.cities_processing import df
-from data_dashapps.geo import create_default_map_1, create_geo_objects, \
+from modules.data_dashapps.retrieve_data import FlightsFounder
+from modules.data_dashapps.cities_processing import df
+from modules.data_dashapps.geo import create_default_map_1, create_geo_objects, \
  create_default_map_2, create_alt_lines
 
 

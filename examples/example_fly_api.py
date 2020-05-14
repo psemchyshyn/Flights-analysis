@@ -1,3 +1,8 @@
+'''
+FligthsDetector
+Pavlo Semchyshyn
+'''
+
 import requests
 import json
 
