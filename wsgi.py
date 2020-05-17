@@ -17,5 +17,5 @@ application = DispatcherMiddleware(flask_app, {
 })
 
 
-# if __name__ == '__main__':
-#     run_simple('localhost', 8050, application)
+if __name__ == '__main__':
+    run_simple('localhost', 8050, application)
