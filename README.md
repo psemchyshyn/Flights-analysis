@@ -8,7 +8,10 @@ Flight Detector is created for managing flights of different directions and find
 
 The results are presented in user-friendly web-applications(one of them performs alternative flights analysis and the other one - route analysis), which allow to get flights and present them in a shape of graphs and web-maps by indicating the required parameters. You can access the wanted application via the website wrapper, which will navigate you to what information you want to obtain(either alternative flights analysis or route analysis)
 
-**If you choose route analysis, then by entering the names of the origin city and the destination city you will be able: **
+![layout](https://github.com/psemchyshyn/dz_project/blob/master/docs/layout.png)
+
+
+**If you choose route analysis, then by entering the names of the origin city and the destination city you will be able:**
 
 * to see the web-map portraying your route
 * to explore the table(sorted by price), which will present data about tickets including:
@@ -34,10 +37,10 @@ If you chose the city, to which there are no available tickets or the city, whic
 
 If you didn't choose the origin city or destination city or both, then you wouldn't get a web-map, but the API will perform search finding the cheapest available prices, therefore you will get the graph and table.
 
-[route img]()
+![route](https://github.com/psemchyshyn/dz_project/blob/master/docs/route_analysis.png)
 
 
-**If you choose alternative flights analysis, then by entering the names of the origin city and the destination city and the date you will be able: **
+**If you choose alternative flights analysis, then by entering the names of the origin city and the destination city and the date you will be able:**
 
 * to see the web-map proposing all alternative directions to the entered destination city
 * to get those alternative flights on the bubbled graph(the OY axis will show the distance from origin city to alternative city) and each bubble represents an alternative flight
@@ -45,7 +48,7 @@ If you didn't choose the origin city or destination city or both, then you would
 
 The same result as in route analysis application you are going to get in this one if you mistype city, doesn't enter it or if there are no flights from it.
 
-[alt img]()
+![alt](https://github.com/psemchyshyn/dz_project/blob/master/docs/alt_analysis.png)
 
 
 *More information about Flights Detector is on wiki pages* [wiki](https://github.com/psemchyshyn/dz_project/wiki)
