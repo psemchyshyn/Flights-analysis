@@ -92,14 +92,35 @@ $ pip install -r requirements.txt
 
 ### Modules
 
-* [retrieve_data.py]()
-* [geo.py]
-* [manager.py]
-* [cities.py]
+Modules for managing data/work with API
+
+* [modules/data_dashapps/retrieve_data.py](https://github.com/psemchyshyn/dz_project/blob/master/modules/data_dashapps/retrieve_data.py) - contains the class for creating the API wrapper
+* [modules/data_dashapps/geo.py](https://github.com/psemchyshyn/dz_project/blob/master/modules/data_dashapps/geo.py) - contains the functions to work with geo-data and visualizing web-maps
+* [modules/data_dashapps/manager.py](https://github.com/psemchyshyn/dz_project/blob/master/modules/data_dashapps/manager.py) - implements ManagerFlight ADT
+* [modules/data_dashapps/cities_processing.py](https://github.com/psemchyshyn/dz_project/blob/master/modules/data_dashapps/cities_processing.py) - performs manipulations with data of cities with IATA code
+
+Modules for implementing web-apps:
+
+* [modules/data_dashapps/app1.py](https://github.com/psemchyshyn/dz_project/blob/master/modules/data_dashapps/app1.py) - implementing route analysis dash app 
+* [modules/data_dashapps/app2.py](https://github.com/psemchyshyn/dz_project/blob/master/modules/data_dashapps/app2.py) - implementing alternative flights analysis app
+* [modules/flask_app.py](https://github.com/psemchyshyn/dz_project/blob/master/modules/flask_app.py) - creates flask app
+
+Module for running the local server:
+
+* [wsgi.py](https://github.com/psemchyshyn/dz_project/blob/master/wsgi.py) - runs the local server by combining all three created apps(flask app and two dash apps) into one DispatcherMiddleWare application, which opens the needed app depending on the entered URL.
+
 
 ***
 
-### Examples
+### Examples/Testing
+
+You can test ADT with different inputs in the [examples/example_adt_functional.py](https://github.com/psemchyshyn/dz_project/blob/master/examples/example_adt_functional.py) module.
+
+See the work of API in [examples/example_fly_api.py](https://github.com/psemchyshyn/dz_project/blob/master/examples/example_fly_api.py) module
+
+Explore class diagrams and images [here](https://github.com/psemchyshyn/dz_project/tree/master/docs)
+
+Run test modules from root directory. You can test ADT by typing the input data in terminal
 
 ***
 
