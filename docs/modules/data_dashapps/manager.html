@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.1" />
+<title>modules.data_dashapps.manager API documentation</title>
+<meta name="description" content="FligthsDetector
+Pavlo Semchyshyn" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>modules.data_dashapps.manager</code></h1>
+</header>
+<section id="section-intro">
+<p>FligthsDetector
+Pavlo Semchyshyn</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#39;&#39;&#39;
+FligthsDetector
+Pavlo Semchyshyn
+&#39;&#39;&#39;
+
+
+import pandas as pd
+from geopy.distance import distance
+from modules.data_dashapps.retrieve_data import FlightsFounder
+from modules.data_dashapps.cities_processing import df
+from modules.data_dashapps.geo import create_default_map_1, create_geo_objects, \
+ create_default_map_2, create_alt_lines
+
+
+class ManagerFlight:
+    &#39;&#39;&#39;
+    Represents ManagerFlight ADT
+    for manipulating flight data
+    &#39;&#39;&#39;
+    def __init__(self):
+        &#39;&#39;&#39;
+        Inittializes ManagerFlight object
+        with cities table, origin and destination
+        in iata code attributes
+        &#39;&#39;&#39;
+        self.cities_table = df
+        self.origin = None
+        self.destination = None
+        self.table_data = pd.DataFrame()
+
+
+    def _extract_data(self, processor, departure=None):
+        &#39;&#39;&#39;
+        A method, which extracts data from processor
+        request to api
+        &#39;&#39;&#39;
+        try:
+            data = processor.get_latest_tickets(departure)[&#34;data&#34;]
+        except KeyError:
+            data = []
+        self.table_data = pd.DataFrame(data)
+        if data:
+            self.table_data.drop([&#34;show_to_affiliates&#34;, &#34;trip_class&#34;, &#34;actual&#34;,
+                                 &#34;number_of_changes&#34;, &#34;duration&#34;], axis=1, inplace=True)
+
+    def update_data(self, origin=None, destination=None, departure=None):
+        &#39;&#39;&#39;
+        Updates data with new origin and destination
+        places in iata code values
+        &#39;&#39;&#39;
+        processor = FlightsFounder(origin, destination)
+        self._extract_data(processor, departure)
+        self.origin = origin
+        self.destination = destination
+
+    def show_table(self):
+        &#39;&#39;&#39;
+        Shows the beginning of the table
+        in which flight data is stored
+        &#39;&#39;&#39;
+        return self.table_data.head()
+
+    def filter_price(self, lower, upper):
+        &#39;&#39;&#39;
+        Filters prices in table_data attribute
+        by indicating lower and upper boundaries of
+        the price range
+        &#39;&#39;&#39;
+        if not self.table_data.empty:
+            self.table_data.query(&#34;value &gt; @lower and value &lt; @upper&#34;, inplace=True)
+
+    def sort_multiple(self, filters):
+        &#39;&#39;&#39;
+        Sorts stored data by indicating a list of filters.
+        Returns a python list of DataFrame objects filtered
+        by filter parameter if there is any data stored
+        &#39;&#39;&#39;
+        if not self.table_data.empty:
+            return [self.table_data.sort_values(by=filt) for filt in filters]
+        else:
+            return []
+
+    def _sort_one(self, filt):
+        &#39;&#39;&#39;
+        Helper method, sorts dataframe object
+        without returning anything
+        &#39;&#39;&#39;
+        if not self.table_data.empty:
+            self.table_data.sort_values(by=filt, inplace=True)
+
+    def get_origin_coor(self):
+        &#39;&#39;&#39;
+        Returns an origin city coordiantes if
+        its iata was correctly indicated else returns
+        None
+        &#39;&#39;&#39;
+        return self._get_coors(self.origin)
+
+    def get_destination_coor(self):
+        &#39;&#39;&#39;
+        Returns an destination city coordinates if
+        its iata was correctly indicated else returns
+        None
+        &#39;&#39;&#39;
+        return self._get_coors(self.destination)
+
+    def _get_coors(self, place_iata):
+        &#39;&#39;&#39;
+        Helper method for processing a coordiantes of the city
+        by giving its iata code
+        &#39;&#39;&#39;
+        try:
+            coors = self.cities_table[self.cities_table[&#34;code&#34;] == place_iata].values[0][2].values()
+            coors = list(coors)[:: -1]
+        except (IndexError, KeyError):
+            coors = None
+        return coors
+
+    def get_origin_name(self):
+        &#39;&#39;&#39;
+        Returns an destination city name if
+        its iata was correctly indicated else returns
+        None
+        &#39;&#39;&#39;
+        return self._get_city_name(self.origin)
+
+    def get_destination_name(self):
+        &#39;&#39;&#39;
+        Returns an destination city name if
+        its iata was correctly indicated else returns
+        None
+        &#39;&#39;&#39;
+        return self._get_city_name(self.destination)
+
+    def _get_city_name(self, place_iata):
+        &#39;&#39;&#39;
+        Helper method for processing a name of the city
+        by giving its iata code
+        &#39;&#39;&#39;
+        try:
+            city_name = self.cities_table[self.cities_table[&#34;code&#34;] == place_iata].values[0][1]
+        except (IndexError, KeyError):
+            city_name = &#34;-&#34;
+        return city_name
+
+    def create_layout_graph(self, checklist_filter):
+        &#39;&#39;&#39;
+        Method, which creates a layout to graph, which accepts
+        a python dictionary as a input
+        &#39;&#39;&#39;
+        data_to_pass = self.sort_multiple(checklist_filter)
+        return  {
+            &#34;data&#34;: [
+                {&#34;x&#34;: option[filt], &#34;y&#34;: option[&#34;value&#34;], &#34;name&#34;: filt, &#34;type&#34;: &#34;line&#34;,
+                 &#34;text&#34;: option[filt]}
+                for option, filt in zip(data_to_pass, checklist_filter)
+            ],
+            &#34;layout&#34;: {
+                &#34;title&#34;: &#34;Analysis of flights from &#34; + self.get_origin_name() + &#34; to &#34; \
+                     + self.get_destination_name(),
+                &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+                &#34;yaxis&#34;: {&#34;title&#34;: &#34;Price, UAH&#34;, &#34;type&#34;: &#34;log&#34;}
+            }
+        }
+
+    def create_web_map_1(self):
+        &#39;&#39;&#39;
+        Creates interactive web map using defined
+        in geo module functions
+        &#39;&#39;&#39;
+        dest_coor = self.get_destination_coor()
+        origin_coor = self.get_origin_coor()
+        if dest_coor and origin_coor:
+            return create_geo_objects(origin_coor, dest_coor,
+                                      self.get_origin_name(), self.get_destination_name())
+        else:
+            return create_default_map_1()
+
+    def get_cheapest_price(self):
+        &#39;&#39;&#39;
+        Gets the price of the cheapest route
+        by indicated direction
+        &#39;&#39;&#39;
+        if self.table_data.empty:
+            result = 0
+        else:
+            result = self.table_data[&#34;value&#34;].min()
+        return result
+
+    def get_highest_price(self):
+        &#39;&#39;&#39;
+        Gets the price of the most expensive tickets
+        by indicated direction
+        &#39;&#39;&#39;
+        if self.table_data.empty:
+            result = 10000
+        else:
+            result = self.table_data[&#34;value&#34;].max()
+        return result
+
+    def get_data_table(self):
+        &#39;&#39;&#39;
+        Presents stored in ADT data
+        as python dictionary
+        &#39;&#39;&#39;
+        return self.table_data.to_dict(&#34;records&#34;)
+
+    def get_distance_between_points(self):
+        &#39;&#39;&#39;
+        Gets distance in kilometer between origin and
+        destination
+        &#39;&#39;&#39;
+        origin_coor = self.get_origin_coor()
+        dest_coor = self.get_destination_coor()
+        if origin_coor and dest_coor:
+            return distance(origin_coor, dest_coor).km
+
+    def get_locations_between(self, max_distance: int) -&gt; None:
+        &#39;&#39;&#39;
+        Sorts the table_data attribute by leaving the elements with
+        distance to the final point less than max_distance
+        Note:
+        Can be used only if in update method destination parameter is
+        set to None
+        &#39;&#39;&#39;
+        if max_distance:
+            self.table_data.query(&#34;distance &lt; @max_distance&#34;, inplace=True)
+
+    def process_distances_for_alt_flights(self):
+        &#39;&#39;&#39;
+        Method searches and calculates the distance for alternative
+        flights analysis by changing table_data attribute (adding
+        new column with coordinates).
+        &#39;&#39;&#39;
+        base_distance = self.get_distance_between_points()
+        self.update_data(self.origin)
+        if base_distance and not self.table_data.empty:
+            self.get_locations_between(base_distance)
+            self._sort_one(&#34;destination&#34;)
+            temp = self.cities_table[self.cities_table[&#34;code&#34;].isin(self.table_data[&#34;destination&#34;])]
+            temp.sort_values(by=&#34;code&#34;, inplace=True)
+            coordinates = []
+            for _, row in temp.iterrows():
+                coor = row[&#34;coordinates&#34;]
+                if isinstance(coor, dict):
+                    coor = list(coor.values())[:: -1]
+                    coordinates.append(coor)
+                else:
+                    coordinates.append(None)
+            self.table_data[&#34;coordinates&#34;] = coordinates
+            self._sort_one(&#34;distance&#34;)
+
+    def create_web_map_2(self):
+        &#39;&#39;&#39;
+        Creates a web map for app2
+        &#39;&#39;&#39;
+        if &#34;coordinates&#34; in self.table_data:
+            result = create_alt_lines(self.get_origin_coor(), self.table_data)
+        else:
+            result = create_default_map_2()
+        return result
+
+    def create_bubble_layout(self):
+        &#39;&#39;&#39;
+        Creates a layout for a graph in app2
+        &#39;&#39;&#39;
+        if self.table_data.empty:
+            return {
+                &#34;data&#34;: [],
+                &#34;layout&#34;: {
+                    &#34;title&#34;: &#34;Alternative flights analysis&#34;,
+                    &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+                    &#34;yaxis&#34;: {&#34;title&#34;: &#34;Distance, km&#34;, &#34;type&#34;: &#34;log&#34;}
+                }
+        }
+        else:
+            return {
+                &#34;data&#34;: [
+                    {
+                    &#34;x&#34;: self.table_data[&#34;depart_date&#34;],
+                    &#34;y&#34;: self.table_data[&#34;distance&#34;],
+                    &#34;mode&#34;: &#39;markers&#39;,
+                    &#34;marker&#34;: {
+                        &#39;size&#39;: 15,
+                        &#39;opacity&#39;: 0.5,
+                        &#39;line&#39;: {&#39;width&#39;: 0.5, &#39;color&#39;: &#39;white&#39;},
+                    },
+                    &#39;customdata&#39;: self.table_data[&#34;destination&#34;]
+                    }
+                ],
+                &#34;layout&#34;: {
+                    &#34;title&#34;: &#34;Alternative flights analysis&#34;,
+                    &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+                    &#34;yaxis&#34;: {&#34;title&#34;: &#34;Distance, km&#34;, &#34;type&#34;: &#34;log&#34;},
+                    &#34;hovermode&#34;: &#39;closest&#39;,
+                    &#34;clickmode&#34;: &#34;event+select&#34;
+                }
+            }</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="modules.data_dashapps.manager.ManagerFlight"><code class="flex name class">
+<span>class <span class="ident">ManagerFlight</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents ManagerFlight ADT
+for manipulating flight data</p>
+<p>Inittializes ManagerFlight object
+with cities table, origin and destination
+in iata code attributes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ManagerFlight:
+    &#39;&#39;&#39;
+    Represents ManagerFlight ADT
+    for manipulating flight data
+    &#39;&#39;&#39;
+    def __init__(self):
+        &#39;&#39;&#39;
+        Inittializes ManagerFlight object
+        with cities table, origin and destination
+        in iata code attributes
+        &#39;&#39;&#39;
+        self.cities_table = df
+        self.origin = None
+        self.destination = None
+        self.table_data = pd.DataFrame()
+
+
+    def _extract_data(self, processor, departure=None):
+        &#39;&#39;&#39;
+        A method, which extracts data from processor
+        request to api
+        &#39;&#39;&#39;
+        try:
+            data = processor.get_latest_tickets(departure)[&#34;data&#34;]
+        except KeyError:
+            data = []
+        self.table_data = pd.DataFrame(data)
+        if data:
+            self.table_data.drop([&#34;show_to_affiliates&#34;, &#34;trip_class&#34;, &#34;actual&#34;,
+                                 &#34;number_of_changes&#34;, &#34;duration&#34;], axis=1, inplace=True)
+
+    def update_data(self, origin=None, destination=None, departure=None):
+        &#39;&#39;&#39;
+        Updates data with new origin and destination
+        places in iata code values
+        &#39;&#39;&#39;
+        processor = FlightsFounder(origin, destination)
+        self._extract_data(processor, departure)
+        self.origin = origin
+        self.destination = destination
+
+    def show_table(self):
+        &#39;&#39;&#39;
+        Shows the beginning of the table
+        in which flight data is stored
+        &#39;&#39;&#39;
+        return self.table_data.head()
+
+    def filter_price(self, lower, upper):
+        &#39;&#39;&#39;
+        Filters prices in table_data attribute
+        by indicating lower and upper boundaries of
+        the price range
+        &#39;&#39;&#39;
+        if not self.table_data.empty:
+            self.table_data.query(&#34;value &gt; @lower and value &lt; @upper&#34;, inplace=True)
+
+    def sort_multiple(self, filters):
+        &#39;&#39;&#39;
+        Sorts stored data by indicating a list of filters.
+        Returns a python list of DataFrame objects filtered
+        by filter parameter if there is any data stored
+        &#39;&#39;&#39;
+        if not self.table_data.empty:
+            return [self.table_data.sort_values(by=filt) for filt in filters]
+        else:
+            return []
+
+    def _sort_one(self, filt):
+        &#39;&#39;&#39;
+        Helper method, sorts dataframe object
+        without returning anything
+        &#39;&#39;&#39;
+        if not self.table_data.empty:
+            self.table_data.sort_values(by=filt, inplace=True)
+
+    def get_origin_coor(self):
+        &#39;&#39;&#39;
+        Returns an origin city coordiantes if
+        its iata was correctly indicated else returns
+        None
+        &#39;&#39;&#39;
+        return self._get_coors(self.origin)
+
+    def get_destination_coor(self):
+        &#39;&#39;&#39;
+        Returns an destination city coordinates if
+        its iata was correctly indicated else returns
+        None
+        &#39;&#39;&#39;
+        return self._get_coors(self.destination)
+
+    def _get_coors(self, place_iata):
+        &#39;&#39;&#39;
+        Helper method for processing a coordiantes of the city
+        by giving its iata code
+        &#39;&#39;&#39;
+        try:
+            coors = self.cities_table[self.cities_table[&#34;code&#34;] == place_iata].values[0][2].values()
+            coors = list(coors)[:: -1]
+        except (IndexError, KeyError):
+            coors = None
+        return coors
+
+    def get_origin_name(self):
+        &#39;&#39;&#39;
+        Returns an destination city name if
+        its iata was correctly indicated else returns
+        None
+        &#39;&#39;&#39;
+        return self._get_city_name(self.origin)
+
+    def get_destination_name(self):
+        &#39;&#39;&#39;
+        Returns an destination city name if
+        its iata was correctly indicated else returns
+        None
+        &#39;&#39;&#39;
+        return self._get_city_name(self.destination)
+
+    def _get_city_name(self, place_iata):
+        &#39;&#39;&#39;
+        Helper method for processing a name of the city
+        by giving its iata code
+        &#39;&#39;&#39;
+        try:
+            city_name = self.cities_table[self.cities_table[&#34;code&#34;] == place_iata].values[0][1]
+        except (IndexError, KeyError):
+            city_name = &#34;-&#34;
+        return city_name
+
+    def create_layout_graph(self, checklist_filter):
+        &#39;&#39;&#39;
+        Method, which creates a layout to graph, which accepts
+        a python dictionary as a input
+        &#39;&#39;&#39;
+        data_to_pass = self.sort_multiple(checklist_filter)
+        return  {
+            &#34;data&#34;: [
+                {&#34;x&#34;: option[filt], &#34;y&#34;: option[&#34;value&#34;], &#34;name&#34;: filt, &#34;type&#34;: &#34;line&#34;,
+                 &#34;text&#34;: option[filt]}
+                for option, filt in zip(data_to_pass, checklist_filter)
+            ],
+            &#34;layout&#34;: {
+                &#34;title&#34;: &#34;Analysis of flights from &#34; + self.get_origin_name() + &#34; to &#34; \
+                     + self.get_destination_name(),
+                &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+                &#34;yaxis&#34;: {&#34;title&#34;: &#34;Price, UAH&#34;, &#34;type&#34;: &#34;log&#34;}
+            }
+        }
+
+    def create_web_map_1(self):
+        &#39;&#39;&#39;
+        Creates interactive web map using defined
+        in geo module functions
+        &#39;&#39;&#39;
+        dest_coor = self.get_destination_coor()
+        origin_coor = self.get_origin_coor()
+        if dest_coor and origin_coor:
+            return create_geo_objects(origin_coor, dest_coor,
+                                      self.get_origin_name(), self.get_destination_name())
+        else:
+            return create_default_map_1()
+
+    def get_cheapest_price(self):
+        &#39;&#39;&#39;
+        Gets the price of the cheapest route
+        by indicated direction
+        &#39;&#39;&#39;
+        if self.table_data.empty:
+            result = 0
+        else:
+            result = self.table_data[&#34;value&#34;].min()
+        return result
+
+    def get_highest_price(self):
+        &#39;&#39;&#39;
+        Gets the price of the most expensive tickets
+        by indicated direction
+        &#39;&#39;&#39;
+        if self.table_data.empty:
+            result = 10000
+        else:
+            result = self.table_data[&#34;value&#34;].max()
+        return result
+
+    def get_data_table(self):
+        &#39;&#39;&#39;
+        Presents stored in ADT data
+        as python dictionary
+        &#39;&#39;&#39;
+        return self.table_data.to_dict(&#34;records&#34;)
+
+    def get_distance_between_points(self):
+        &#39;&#39;&#39;
+        Gets distance in kilometer between origin and
+        destination
+        &#39;&#39;&#39;
+        origin_coor = self.get_origin_coor()
+        dest_coor = self.get_destination_coor()
+        if origin_coor and dest_coor:
+            return distance(origin_coor, dest_coor).km
+
+    def get_locations_between(self, max_distance: int) -&gt; None:
+        &#39;&#39;&#39;
+        Sorts the table_data attribute by leaving the elements with
+        distance to the final point less than max_distance
+        Note:
+        Can be used only if in update method destination parameter is
+        set to None
+        &#39;&#39;&#39;
+        if max_distance:
+            self.table_data.query(&#34;distance &lt; @max_distance&#34;, inplace=True)
+
+    def process_distances_for_alt_flights(self):
+        &#39;&#39;&#39;
+        Method searches and calculates the distance for alternative
+        flights analysis by changing table_data attribute (adding
+        new column with coordinates).
+        &#39;&#39;&#39;
+        base_distance = self.get_distance_between_points()
+        self.update_data(self.origin)
+        if base_distance and not self.table_data.empty:
+            self.get_locations_between(base_distance)
+            self._sort_one(&#34;destination&#34;)
+            temp = self.cities_table[self.cities_table[&#34;code&#34;].isin(self.table_data[&#34;destination&#34;])]
+            temp.sort_values(by=&#34;code&#34;, inplace=True)
+            coordinates = []
+            for _, row in temp.iterrows():
+                coor = row[&#34;coordinates&#34;]
+                if isinstance(coor, dict):
+                    coor = list(coor.values())[:: -1]
+                    coordinates.append(coor)
+                else:
+                    coordinates.append(None)
+            self.table_data[&#34;coordinates&#34;] = coordinates
+            self._sort_one(&#34;distance&#34;)
+
+    def create_web_map_2(self):
+        &#39;&#39;&#39;
+        Creates a web map for app2
+        &#39;&#39;&#39;
+        if &#34;coordinates&#34; in self.table_data:
+            result = create_alt_lines(self.get_origin_coor(), self.table_data)
+        else:
+            result = create_default_map_2()
+        return result
+
+    def create_bubble_layout(self):
+        &#39;&#39;&#39;
+        Creates a layout for a graph in app2
+        &#39;&#39;&#39;
+        if self.table_data.empty:
+            return {
+                &#34;data&#34;: [],
+                &#34;layout&#34;: {
+                    &#34;title&#34;: &#34;Alternative flights analysis&#34;,
+                    &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+                    &#34;yaxis&#34;: {&#34;title&#34;: &#34;Distance, km&#34;, &#34;type&#34;: &#34;log&#34;}
+                }
+        }
+        else:
+            return {
+                &#34;data&#34;: [
+                    {
+                    &#34;x&#34;: self.table_data[&#34;depart_date&#34;],
+                    &#34;y&#34;: self.table_data[&#34;distance&#34;],
+                    &#34;mode&#34;: &#39;markers&#39;,
+                    &#34;marker&#34;: {
+                        &#39;size&#39;: 15,
+                        &#39;opacity&#39;: 0.5,
+                        &#39;line&#39;: {&#39;width&#39;: 0.5, &#39;color&#39;: &#39;white&#39;},
+                    },
+                    &#39;customdata&#39;: self.table_data[&#34;destination&#34;]
+                    }
+                ],
+                &#34;layout&#34;: {
+                    &#34;title&#34;: &#34;Alternative flights analysis&#34;,
+                    &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+                    &#34;yaxis&#34;: {&#34;title&#34;: &#34;Distance, km&#34;, &#34;type&#34;: &#34;log&#34;},
+                    &#34;hovermode&#34;: &#39;closest&#39;,
+                    &#34;clickmode&#34;: &#34;event+select&#34;
+                }
+            }</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="modules.data_dashapps.manager.ManagerFlight.create_bubble_layout"><code class="name flex">
+<span>def <span class="ident">create_bubble_layout</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a layout for a graph in app2</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_bubble_layout(self):
+    &#39;&#39;&#39;
+    Creates a layout for a graph in app2
+    &#39;&#39;&#39;
+    if self.table_data.empty:
+        return {
+            &#34;data&#34;: [],
+            &#34;layout&#34;: {
+                &#34;title&#34;: &#34;Alternative flights analysis&#34;,
+                &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+                &#34;yaxis&#34;: {&#34;title&#34;: &#34;Distance, km&#34;, &#34;type&#34;: &#34;log&#34;}
+            }
+    }
+    else:
+        return {
+            &#34;data&#34;: [
+                {
+                &#34;x&#34;: self.table_data[&#34;depart_date&#34;],
+                &#34;y&#34;: self.table_data[&#34;distance&#34;],
+                &#34;mode&#34;: &#39;markers&#39;,
+                &#34;marker&#34;: {
+                    &#39;size&#39;: 15,
+                    &#39;opacity&#39;: 0.5,
+                    &#39;line&#39;: {&#39;width&#39;: 0.5, &#39;color&#39;: &#39;white&#39;},
+                },
+                &#39;customdata&#39;: self.table_data[&#34;destination&#34;]
+                }
+            ],
+            &#34;layout&#34;: {
+                &#34;title&#34;: &#34;Alternative flights analysis&#34;,
+                &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+                &#34;yaxis&#34;: {&#34;title&#34;: &#34;Distance, km&#34;, &#34;type&#34;: &#34;log&#34;},
+                &#34;hovermode&#34;: &#39;closest&#39;,
+                &#34;clickmode&#34;: &#34;event+select&#34;
+            }
+        }</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.create_layout_graph"><code class="name flex">
+<span>def <span class="ident">create_layout_graph</span></span>(<span>self, checklist_filter)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method, which creates a layout to graph, which accepts
+a python dictionary as a input</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_layout_graph(self, checklist_filter):
+    &#39;&#39;&#39;
+    Method, which creates a layout to graph, which accepts
+    a python dictionary as a input
+    &#39;&#39;&#39;
+    data_to_pass = self.sort_multiple(checklist_filter)
+    return  {
+        &#34;data&#34;: [
+            {&#34;x&#34;: option[filt], &#34;y&#34;: option[&#34;value&#34;], &#34;name&#34;: filt, &#34;type&#34;: &#34;line&#34;,
+             &#34;text&#34;: option[filt]}
+            for option, filt in zip(data_to_pass, checklist_filter)
+        ],
+        &#34;layout&#34;: {
+            &#34;title&#34;: &#34;Analysis of flights from &#34; + self.get_origin_name() + &#34; to &#34; \
+                 + self.get_destination_name(),
+            &#34;xaxis&#34;: {&#34;title&#34;: &#34;Date&#34;},
+            &#34;yaxis&#34;: {&#34;title&#34;: &#34;Price, UAH&#34;, &#34;type&#34;: &#34;log&#34;}
+        }
+    }</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.create_web_map_1"><code class="name flex">
+<span>def <span class="ident">create_web_map_1</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates interactive web map using defined
+in geo module functions</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_web_map_1(self):
+    &#39;&#39;&#39;
+    Creates interactive web map using defined
+    in geo module functions
+    &#39;&#39;&#39;
+    dest_coor = self.get_destination_coor()
+    origin_coor = self.get_origin_coor()
+    if dest_coor and origin_coor:
+        return create_geo_objects(origin_coor, dest_coor,
+                                  self.get_origin_name(), self.get_destination_name())
+    else:
+        return create_default_map_1()</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.create_web_map_2"><code class="name flex">
+<span>def <span class="ident">create_web_map_2</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a web map for app2</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_web_map_2(self):
+    &#39;&#39;&#39;
+    Creates a web map for app2
+    &#39;&#39;&#39;
+    if &#34;coordinates&#34; in self.table_data:
+        result = create_alt_lines(self.get_origin_coor(), self.table_data)
+    else:
+        result = create_default_map_2()
+    return result</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.filter_price"><code class="name flex">
+<span>def <span class="ident">filter_price</span></span>(<span>self, lower, upper)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters prices in table_data attribute
+by indicating lower and upper boundaries of
+the price range</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_price(self, lower, upper):
+    &#39;&#39;&#39;
+    Filters prices in table_data attribute
+    by indicating lower and upper boundaries of
+    the price range
+    &#39;&#39;&#39;
+    if not self.table_data.empty:
+        self.table_data.query(&#34;value &gt; @lower and value &lt; @upper&#34;, inplace=True)</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_cheapest_price"><code class="name flex">
+<span>def <span class="ident">get_cheapest_price</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the price of the cheapest route
+by indicated direction</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_cheapest_price(self):
+    &#39;&#39;&#39;
+    Gets the price of the cheapest route
+    by indicated direction
+    &#39;&#39;&#39;
+    if self.table_data.empty:
+        result = 0
+    else:
+        result = self.table_data[&#34;value&#34;].min()
+    return result</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_data_table"><code class="name flex">
+<span>def <span class="ident">get_data_table</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Presents stored in ADT data
+as python dictionary</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_data_table(self):
+    &#39;&#39;&#39;
+    Presents stored in ADT data
+    as python dictionary
+    &#39;&#39;&#39;
+    return self.table_data.to_dict(&#34;records&#34;)</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_destination_coor"><code class="name flex">
+<span>def <span class="ident">get_destination_coor</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns an destination city coordinates if
+its iata was correctly indicated else returns
+None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_destination_coor(self):
+    &#39;&#39;&#39;
+    Returns an destination city coordinates if
+    its iata was correctly indicated else returns
+    None
+    &#39;&#39;&#39;
+    return self._get_coors(self.destination)</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_destination_name"><code class="name flex">
+<span>def <span class="ident">get_destination_name</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns an destination city name if
+its iata was correctly indicated else returns
+None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_destination_name(self):
+    &#39;&#39;&#39;
+    Returns an destination city name if
+    its iata was correctly indicated else returns
+    None
+    &#39;&#39;&#39;
+    return self._get_city_name(self.destination)</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_distance_between_points"><code class="name flex">
+<span>def <span class="ident">get_distance_between_points</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets distance in kilometer between origin and
+destination</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_distance_between_points(self):
+    &#39;&#39;&#39;
+    Gets distance in kilometer between origin and
+    destination
+    &#39;&#39;&#39;
+    origin_coor = self.get_origin_coor()
+    dest_coor = self.get_destination_coor()
+    if origin_coor and dest_coor:
+        return distance(origin_coor, dest_coor).km</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_highest_price"><code class="name flex">
+<span>def <span class="ident">get_highest_price</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the price of the most expensive tickets
+by indicated direction</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_highest_price(self):
+    &#39;&#39;&#39;
+    Gets the price of the most expensive tickets
+    by indicated direction
+    &#39;&#39;&#39;
+    if self.table_data.empty:
+        result = 10000
+    else:
+        result = self.table_data[&#34;value&#34;].max()
+    return result</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_locations_between"><code class="name flex">
+<span>def <span class="ident">get_locations_between</span></span>(<span>self, max_distance: int) -> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sorts the table_data attribute by leaving the elements with
+distance to the final point less than max_distance
+Note:
+Can be used only if in update method destination parameter is
+set to None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_locations_between(self, max_distance: int) -&gt; None:
+    &#39;&#39;&#39;
+    Sorts the table_data attribute by leaving the elements with
+    distance to the final point less than max_distance
+    Note:
+    Can be used only if in update method destination parameter is
+    set to None
+    &#39;&#39;&#39;
+    if max_distance:
+        self.table_data.query(&#34;distance &lt; @max_distance&#34;, inplace=True)</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_origin_coor"><code class="name flex">
+<span>def <span class="ident">get_origin_coor</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns an origin city coordiantes if
+its iata was correctly indicated else returns
+None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_origin_coor(self):
+    &#39;&#39;&#39;
+    Returns an origin city coordiantes if
+    its iata was correctly indicated else returns
+    None
+    &#39;&#39;&#39;
+    return self._get_coors(self.origin)</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.get_origin_name"><code class="name flex">
+<span>def <span class="ident">get_origin_name</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns an destination city name if
+its iata was correctly indicated else returns
+None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_origin_name(self):
+    &#39;&#39;&#39;
+    Returns an destination city name if
+    its iata was correctly indicated else returns
+    None
+    &#39;&#39;&#39;
+    return self._get_city_name(self.origin)</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.process_distances_for_alt_flights"><code class="name flex">
+<span>def <span class="ident">process_distances_for_alt_flights</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method searches and calculates the distance for alternative
+flights analysis by changing table_data attribute (adding
+new column with coordinates).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_distances_for_alt_flights(self):
+    &#39;&#39;&#39;
+    Method searches and calculates the distance for alternative
+    flights analysis by changing table_data attribute (adding
+    new column with coordinates).
+    &#39;&#39;&#39;
+    base_distance = self.get_distance_between_points()
+    self.update_data(self.origin)
+    if base_distance and not self.table_data.empty:
+        self.get_locations_between(base_distance)
+        self._sort_one(&#34;destination&#34;)
+        temp = self.cities_table[self.cities_table[&#34;code&#34;].isin(self.table_data[&#34;destination&#34;])]
+        temp.sort_values(by=&#34;code&#34;, inplace=True)
+        coordinates = []
+        for _, row in temp.iterrows():
+            coor = row[&#34;coordinates&#34;]
+            if isinstance(coor, dict):
+                coor = list(coor.values())[:: -1]
+                coordinates.append(coor)
+            else:
+                coordinates.append(None)
+        self.table_data[&#34;coordinates&#34;] = coordinates
+        self._sort_one(&#34;distance&#34;)</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.show_table"><code class="name flex">
+<span>def <span class="ident">show_table</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shows the beginning of the table
+in which flight data is stored</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_table(self):
+    &#39;&#39;&#39;
+    Shows the beginning of the table
+    in which flight data is stored
+    &#39;&#39;&#39;
+    return self.table_data.head()</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.sort_multiple"><code class="name flex">
+<span>def <span class="ident">sort_multiple</span></span>(<span>self, filters)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sorts stored data by indicating a list of filters.
+Returns a python list of DataFrame objects filtered
+by filter parameter if there is any data stored</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_multiple(self, filters):
+    &#39;&#39;&#39;
+    Sorts stored data by indicating a list of filters.
+    Returns a python list of DataFrame objects filtered
+    by filter parameter if there is any data stored
+    &#39;&#39;&#39;
+    if not self.table_data.empty:
+        return [self.table_data.sort_values(by=filt) for filt in filters]
+    else:
+        return []</code></pre>
+</details>
+</dd>
+<dt id="modules.data_dashapps.manager.ManagerFlight.update_data"><code class="name flex">
+<span>def <span class="ident">update_data</span></span>(<span>self, origin=None, destination=None, departure=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates data with new origin and destination
+places in iata code values</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_data(self, origin=None, destination=None, departure=None):
+    &#39;&#39;&#39;
+    Updates data with new origin and destination
+    places in iata code values
+    &#39;&#39;&#39;
+    processor = FlightsFounder(origin, destination)
+    self._extract_data(processor, departure)
+    self.origin = origin
+    self.destination = destination</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="modules.data_dashapps" href="index.html">modules.data_dashapps</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="modules.data_dashapps.manager.ManagerFlight" href="#modules.data_dashapps.manager.ManagerFlight">ManagerFlight</a></code></h4>
+<ul class="">
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.create_bubble_layout" href="#modules.data_dashapps.manager.ManagerFlight.create_bubble_layout">create_bubble_layout</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.create_layout_graph" href="#modules.data_dashapps.manager.ManagerFlight.create_layout_graph">create_layout_graph</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.create_web_map_1" href="#modules.data_dashapps.manager.ManagerFlight.create_web_map_1">create_web_map_1</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.create_web_map_2" href="#modules.data_dashapps.manager.ManagerFlight.create_web_map_2">create_web_map_2</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.filter_price" href="#modules.data_dashapps.manager.ManagerFlight.filter_price">filter_price</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_cheapest_price" href="#modules.data_dashapps.manager.ManagerFlight.get_cheapest_price">get_cheapest_price</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_data_table" href="#modules.data_dashapps.manager.ManagerFlight.get_data_table">get_data_table</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_destination_coor" href="#modules.data_dashapps.manager.ManagerFlight.get_destination_coor">get_destination_coor</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_destination_name" href="#modules.data_dashapps.manager.ManagerFlight.get_destination_name">get_destination_name</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_distance_between_points" href="#modules.data_dashapps.manager.ManagerFlight.get_distance_between_points">get_distance_between_points</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_highest_price" href="#modules.data_dashapps.manager.ManagerFlight.get_highest_price">get_highest_price</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_locations_between" href="#modules.data_dashapps.manager.ManagerFlight.get_locations_between">get_locations_between</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_origin_coor" href="#modules.data_dashapps.manager.ManagerFlight.get_origin_coor">get_origin_coor</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.get_origin_name" href="#modules.data_dashapps.manager.ManagerFlight.get_origin_name">get_origin_name</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.process_distances_for_alt_flights" href="#modules.data_dashapps.manager.ManagerFlight.process_distances_for_alt_flights">process_distances_for_alt_flights</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.show_table" href="#modules.data_dashapps.manager.ManagerFlight.show_table">show_table</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.sort_multiple" href="#modules.data_dashapps.manager.ManagerFlight.sort_multiple">sort_multiple</a></code></li>
+<li><code><a title="modules.data_dashapps.manager.ManagerFlight.update_data" href="#modules.data_dashapps.manager.ManagerFlight.update_data">update_data</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.1</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
